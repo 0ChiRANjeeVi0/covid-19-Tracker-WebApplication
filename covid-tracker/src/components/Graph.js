@@ -43,16 +43,17 @@ export default function Graph(props){
 	}]
 }
 	return (
-		<div className="mt-4 pb-4 border border-top-0 border-primary">
+		<div className=" pb-4">
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col-md-6">
-						<h4 className="text-center">Total Number of Positive Covid-19 Cases Around The Globe</h4>
+						<h4 className="text-center">Total Number Of People Affected By Covid-19 {props.title}</h4>
+						<p className="text-center">Historical data for past 6 days</p>
 						<Bar data={data} options={options} />
 						<h5 className="text-center">{newcase} Cases Detected In Last 24 Hours</h5>
 					</div>
 					<div className="col-md-6 mt-4 mt-md-0">
-						<GraphDeaths deathKey={props.deathsKey}  deathValue={props.deathValues}/>
+						<GraphDeaths title={props.title} deathKey={props.deathsKey}  deathValue={props.deathValues}/>
 					</div>
 				</div>
 			</div>

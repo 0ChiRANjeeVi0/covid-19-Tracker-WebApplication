@@ -14,7 +14,6 @@ const options ={
 export default function GraphDeaths(props){
 	const calNewdeaths = () =>{
 		newdeaths = props.deathValue[4]- props.deathValue[3]
-		console.log(newdeaths)
 	}
 	calNewdeaths();
 	const labels = props.deathKey
@@ -47,7 +46,8 @@ export default function GraphDeaths(props){
 	return (
 
 		<div className="">
-			<h4 className="text-center">Total Number Of Deaths Due To Covid Deaths Around The Globe</h4>
+			<h4 className="text-center">Total Number Of Deaths Due To Covid Deaths {props.title}</h4>
+			<p className="text-center">Historical data for past 6 days</p>
 			<Bar data={data} options={options} />
 			<h5 className="text-center">{newdeaths} Deaths Detected In Last 24 Hours</h5>
 		</div>
